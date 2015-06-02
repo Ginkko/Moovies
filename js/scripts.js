@@ -16,6 +16,7 @@ var price = function(movie, ticket) {
 }
 
 var populateDB = function() {
+
   var movie0 = new Movie("Highlander", 0.5);
   movies.push(movie0);
   var movie1 = new Movie("Jurassic Park", 2);
@@ -34,6 +35,7 @@ var populateDB = function() {
 
 
 $(function() {
+
   populateDB();
 
   movies.forEach(function(movie){
@@ -41,7 +43,16 @@ $(function() {
   });
 
 
-  event.preventDefault();
+  $("form#buyTicket").submit(function() {
+    event.preventDefault();
+    var category = $("select#movies").val();
+    var showTime = $("select#showTime").val();
+    var discount = $("select#discount").val();
 
+    var dummyTicket = new Ticket(discount, showTime);
+    var dummyMovie = new Movie("Movie", category);
+    var finalPrice = price(dummyMovie, dummyTicket);
 
+    $("p#price").append(finalPrice);
+  });
 });

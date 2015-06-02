@@ -17,13 +17,31 @@ var price = function(movie, ticket) {
 
 var populateDB = function() {
   var movie0 = new Movie("Highlander", 0.5);
+  movies.push(movie0);
   var movie1 = new Movie("Jurassic Park", 2);
+  movies.push(movie1);
   var movie2 = new Movie("Adventures of Sloth Banker", 1);
+  movies.push(movie2);
   var movie3 = new Movie("Big Hero 6", 2);
+  movies.push(movie3);
   var movie4 = new Movie("John Wick", 1);
+  movies.push(movie4);
   var movie5 = new Movie("Evil Dead", 0.5);
+  movies.push(movie5);
 
-  for(var i = 0; i < 6; i++) {
-    movies.push("movie" + i);
   }
-}
+
+
+
+$(function() {
+  populateDB();
+
+  movies.forEach(function(movie){
+    $("select#movies").append("<option value='" + movie.movieCategory + "'>" + movie.title + "</option>");
+  });
+
+
+  event.preventDefault();
+
+
+});

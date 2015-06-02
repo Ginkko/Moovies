@@ -24,7 +24,6 @@ describe("price", function() {
 
 describe("populateDB", function() {
   it("Poulates the movies array with awesome movies", function() {
-    populateDB();
     expect(movies.length).to.equal(6);
   });
 });

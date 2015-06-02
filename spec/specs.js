@@ -21,3 +21,10 @@ describe("price", function() {
     expect(price(testMovie, testTicket)).to.equal(7.5)
   });
 })
+
+describe("populateDB", function() {
+  it("Poulates the movies array with awesome movies", function() {
+    populateDB();
+    expect(movies.length).to.equal(6);
+  });
+});

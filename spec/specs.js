@@ -5,3 +5,11 @@ describe("Ticket", function() {
     expect(testTicket.showTime).to.equal("matinee");
   });
 });
+
+describe("Movie", function() {
+  it("Constructs a movie with the appropriate attributes", function() {
+    var testMovie = new Movie("Highlander", "re-run");
+    expect(testMovie.title).to.equal("Highlander");
+    expect(testMovie.status).to.equal("re-run");
+  });
+});

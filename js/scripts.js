@@ -3,7 +3,15 @@ function Ticket(discount, showTime) {
   this.showTime = showTime;
 }
 
-function Movie(title, status) {
+function Movie(title, movieCategory) {
   this.title = title;
-  this.status = status;
+  this.movieCategory = movieCategory;
+}
+
+var price = function(movie, ticket) {
+  debugger;
+  var basePrice = 10;
+  // var movie = this.movie
+  // var ticket = this.ticket
+  return basePrice * movie.movieCategory * ticket.discount + ticket.showTime;
 }
